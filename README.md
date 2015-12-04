@@ -1,3 +1,3 @@
 **README**
 
-**A TODO APP tutorial in Angular"
+**A TODO APP tutorial in Angular**
