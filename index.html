@@ -9,11 +9,11 @@
 
   <div ng-controller="mainCtrl" class="list">
     <h1 ng-click="helloWorld()">My TODOs</h1>
-    <div class="item" ng-class = "{'editing-item': editing}" ng-repeat="todo in todos">
+    <div class="item" ng-class = "{'editing-item': editing, 'edited': todo.edited }" ng-repeat="todo in todos">
 
       <input ng-model="todo.completed" type="checkbox"/>
       <label ng-hide="editing" for="editing-label" ng-click="helloWorld()">{{todo.name}}</label>
-      <input ng-blur="editing = false" ng-show = "editing" ng-model = "todo.name" type="text" class="editing-label"/>
+      <input ng-change="todo.edited = true" ng-blur="editing = false" ng-show = "editing" ng-model = "todo.name" type="text" class="editing-label"/>
       <div class="actions">
         <a href="" ng-click= "editing = !editing">edit</a>
         <a href="" ng-click="helloWorld()">save</a>
